@@ -12,6 +12,18 @@
 
   <title>Budget Tracker</title>
 </head>
+<!--Script to add the Service Worker to the application-->
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("service-worker.js")
+        .then(reg => {
+          console.log("We found your service worker file!", reg);
+        });
+    });
+  }
+</script>
+
 <body>
   <div class="wrapper">
     <div class="total">
